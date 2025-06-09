@@ -16,10 +16,10 @@
     
     <div class="section">
         <h2>事業者情報</h2>
-        <p><strong>事業者名:</strong> Vert Media Partners LLC</p>
-        <p><strong>所在地:</strong> 〒132-0033 東京都江戸川区東葛西X-X-X</p>
-        <p><strong>代表者:</strong> [Your Name]</p>
-        <p><strong>連絡先:</strong> contact@vertmedia.io / TEL: [Your Phone]</p>
+        <p><strong>事業者名:</strong> Xzentient </p>
+        <p><strong>所在地:</strong> 〒132-0033 東京都江戸川区東葛西1-12-1</p>
+        <p><strong>代表者:</strong> Samantha Sugathadasa</p>
+        <p><strong>連絡先:</strong> xzentient@gmail.com / TEL:08097185080</p>
     </div>
 
     <div class="section">
@@ -44,7 +44,7 @@
 
     <div class="section">
         <h2>動作環境</h2>
-        <p>iOS XX以上 / Android XX以上</p>
+        <p>iOS 12以上 / Android 8以上</p>
     </div>
 
     <div class="section">
@@ -53,6 +53,6 @@
         <p><strong>ソフトウェアライセンス:</strong> 利用規約に準じます</p>
     </div>
 
-    <p><a href="https://your-nanpa-app.com">← アプリに戻る</a></p>
+    <p><a href="https://appssamurai.github.io/app.html#">← アプリに戻る</a></p>
 </body>
 </html>
