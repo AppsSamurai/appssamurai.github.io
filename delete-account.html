@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Deletion Request</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f3f3;
+      padding: 20px;
+      max-width: 600px;
+      margin: 50px auto;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #2a51bc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1e3d91;
+    }
+  </style>
+</head>
+<body>
+  <h2>Request Account and Data Deletion</h2>
+  <p>If you wish to delete your account and associated data, please fill in your email below. We'll process your request and inform you once completed.</p>
+  
+  <form action="https://formspree.io/f/xovllazn" method="POST">
+    <label for="email">Your Email Address</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="message">Additional Message (optional)</label>
+    <textarea name="message" id="message" rows="4" placeholder="Any additional info you want to share..."></textarea>
+
+    <button type="submit">Submit Request</button>
+  </form>
+</body>
+</html>
