@@ -1,5 +1,5 @@
 {
-    "homepage": "https://appssamurai.github.io/ODPT",
+    "homepage": "https:/AppsSamurai/appssamurai.github.io/",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
