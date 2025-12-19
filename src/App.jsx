@@ -475,6 +475,54 @@ const App = () => {
                     </div>
                 </div>
 
+                {/* Improved Legend & Contextual Info */}
+                <div className="mt-4 transition-all duration-300">
+                    {activeCarNumber && (
+                        <div className="p-5 bg-slate-900 rounded-2xl text-white animate-in slide-in-from-top-2 duration-300">
+                            {(() => {
+                                const car = trainOccupancy.find(c => c.carNumber === activeCarNumber);
+                                const isProximate = selectedEntrance?.platformProximity.includes(activeCarNumber);
+                                const isBest = bestCar && car.carNumber === bestCar.carNumber;
+                                return (
+                                    <div className="space-y-3">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-sm font-black uppercase tracking-widest text-indigo-400">Carriage #{activeCarNumber}</span>
+                                                {isBest && <span className="bg-indigo-600 text-[10px] px-2 py-0.5 rounded-full font-black uppercase">Recommended</span>}
+                                            </div>
+                                            <button onClick={() => setActiveCarNumber(null)} className="p-1 hover:bg-white/10 rounded-lg"><X className="w-4 h-4 text-slate-400" /></button>
+                                        </div>
+                                        <div className="grid grid-cols-2 gap-3">
+                                            <div className="bg-white/10 p-3 rounded-xl border border-white/5">
+                                                <p className="text-[10px] font-bold text-slate-400 uppercase">Boarding Status</p>
+                                                <div className="flex items-center gap-2 mt-1">
+                                                    {isProximate ? <div className="w-2 h-2 rounded-full bg-amber-400" /> : <div className="w-2 h-2 rounded-full bg-slate-500" />}
+                                                    <span className="text-xs font-bold">{isProximate ? 'Fast Transfer' : 'Normal Walk'}</span>
+                                                </div>
+                                            </div>
+                                            <div className="bg-white/10 p-3 rounded-xl border border-white/5">
+                                                <p className="text-[10px] font-bold text-slate-400 uppercase">Congestion</p>
+                                                <p className="text-xs font-black mt-1 uppercase">{car.congestion <= 2 ? 'Low' : car.congestion <= 4 ? 'Moderate' : 'High'}</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-wrap gap-2 pt-1">
+                                            {car.isWomenOnly && <div className="bg-rose-500/30 text-rose-100 text-[9px] font-black uppercase px-2 py-1 rounded-md border border-rose-500/50">Women-Only Car</div>}
+                                            {car.isDisabledAccessible && <div className="bg-blue-500/30 text-blue-100 text-[9px] font-black uppercase px-2 py-1 rounded-md border border-blue-500/50">Wheelchair Accessible</div>}
+                                            {car.isPriority && <div className="bg-emerald-500/30 text-emerald-100 text-[9px] font-black uppercase px-2 py-1 rounded-md border border-emerald-500/50">Priority Seating</div>}
+                                        </div>
+                                        {isProximate && (
+                                            <div className="flex items-center gap-3 bg-amber-500/20 p-3 rounded-xl border border-amber-500/30">
+                                                <Zap className="w-4 h-4 text-amber-400 fill-amber-400" />
+                                                <p className="text-xs font-medium leading-tight text-amber-50">Stops directly in front of <span className="text-amber-300 font-bold">{selectedEntrance?.name}</span> for fastest transfer.</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            })()}
+                        </div>
+                    )}
+                </div>
+
                 <div className="mt-8 pt-6 border-t border-slate-100">
                     <div className="flex items-center justify-between mb-4">
                         <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Legend & Info</h4>
